@@ -1,4 +1,4 @@
-# jummidisco.vim
+# vim-thruterm-colors
 
 This has been forked from jsit's [disco.vim](https://github.com/jsit/disco.vim) to suit my own personal preferences and environments. A few of the NeoVim UI element color assignments are tweaked to improve contrast with my hand-rolled terminal color theme.
 
