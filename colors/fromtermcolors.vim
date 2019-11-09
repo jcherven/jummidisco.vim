@@ -177,7 +177,7 @@ endif
 
 
 " Highlight Groups (:h highlight-groups) {{{
-
+" call <SID>set_colors(group, fg, bg, attr)
 if s:dimtwo != s:dim " Needs to be different from Comment
   call <SID>set_colors("ColorColumn"  , "NONE" , s:dim , "")
   call <SID>set_colors("CursorColumn" , "NONE" , s:dim , "")
@@ -189,7 +189,7 @@ if s:dimtwo != s:dim " Needs to be different from Comment
 else
   call <SID>set_colors("ColorColumn"  , "NONE" , "NONE" , "")
   call <SID>set_colors("CursorColumn" , "NONE" , "NONE" , "")
-  call <SID>set_colors("CursorLine"   , ""     , ""  , "undelrine")
+  call <SID>set_colors("CursorLine"   , ""     , ""  , "underline")
 endif
 
 call <SID>set_colors("Conceal"  , ""     , "NONE" , "")
@@ -261,7 +261,7 @@ call <SID>set_colors("TabLineSel"       , ""         , ""             , "NONE")
 call <SID>set_colors("Title"            , "NONE"     , ""             , "")
 call <SID>set_colors("Visual"           , ""         , s:dim          , "")
 call <SID>set_colors("VisualNOS"        , s:dim      , ""             , "")
-call <SID>set_colors("WarningMsg"       , s:red      , "NONE"             , "")
+call <SID>set_colors("WarningMsg"       , s:red      , s:dim             , "")
 call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 
 " End Highlight Groups }}}
