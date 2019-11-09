@@ -182,14 +182,14 @@ if s:dimtwo != s:dim " Needs to be different from Comment
   call <SID>set_colors("ColorColumn"  , "NONE" , s:dim , "")
   call <SID>set_colors("CursorColumn" , "NONE" , s:dim , "")
   if s:gt_eight " Only turn off bold if we have enough colors
-    call <SID>set_colors("CursorLine" , "" , s:dim , "NONE")
+    call <SID>set_colors("CursorLine" , "" , "" , "underline")
   else
-    call <SID>set_colors("CursorLine" , "" , s:dim , "")
+    call <SID>set_colors("CursorLine" , "" , "" , "underline")
   endif
 else
   call <SID>set_colors("ColorColumn"  , "NONE" , "NONE" , "")
   call <SID>set_colors("CursorColumn" , "NONE" , "NONE" , "")
-  call <SID>set_colors("CursorLine"   , ""     , s:dim  , "")
+  call <SID>set_colors("CursorLine"   , ""     , ""  , "undelrine")
 endif
 
 call <SID>set_colors("Conceal"  , ""     , "NONE" , "")
