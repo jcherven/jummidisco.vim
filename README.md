@@ -8,8 +8,8 @@ Codebase derived from jsit/vim-tomorrow-theme (which was derived from chriskemps
 
 # Options
 
-- `g:disco_nobright`: If set to `1`, don't use bright colors. Default `0`.
-- `g:disco_red_error_only`: If set to `1`, only use the red color for
+- `g:vim-thruterm-colors_nobright`: If set to `1`, don't use bright colors. Default `0`.
+- `g:thruterm-colors_red_error_only`: If set to `1`, only use the red color for
   errors -- useful for terminal themes that intend to reserve this color for
   that purpose, like [Rainglow](https://rainglow.io/). Default `0`.
 
