@@ -7,22 +7,22 @@
 " We need to use :h color-nr numbers for cterm, in case we are on a low-color
 " terminal
 let s:color_map = {
-  \'Black'       : 0,
-  \'DarkRed'     : 1,
-  \'DarkGreen'   : 2,
-  \'DarkYellow'  : 3,
-  \'DarkBlue'    : 4,
-  \'DarkMagenta' : 5,
-  \'DarkCyan'    : 6,
-  \'LightGray'   : 7,
-  \'DarkGray'    : 8,
-  \'Red'         : 9,
-  \'Green'       : 10,
-  \'Yellow'      : 11,
-  \'Blue'        : 12,
-  \'Magenta'     : 13,
-  \'Cyan'        : 14,
-  \'White'       : 15,
+  \'NormalBlack'    : 0,
+  \'NormalRed'      : 1,
+  \'NormalGreen'    : 2,
+  \'NormalYellow'   : 3,
+  \'NormalBlue'     : 4,
+  \'NormalMagenta'  : 5,
+  \'NormalCyan'     : 6,
+  \'NormalWhite'    : 7,
+  \'BrightBlack'    : 8,
+  \'BrightRed'      : 9,
+  \'BrightGreen'    : 10,
+  \'BrightYellow'   : 11,
+  \'BrightBlue'     : 12,
+  \'BrightMagenta'  : 13,
+  \'BrightCyan'     : 14,
+  \'BrightWhite'    : 15,
 \}
 
 " Sets the highlighting for the given group. {{{
@@ -82,24 +82,24 @@ endif
 " Define our colors based on the background setting {{{
 if &background == "dark" && s:gt_eight
 
-  let s:dim          = 'DarkGray'
-  let s:dimtwo       = 'LightGray'
+  let s:dim          = 'BrightBlack'
+  let s:dimtwo       = 'NormalWhite'
 
-  let s:bg           = 'Black'
-  let s:fg           = 'White'
+  let s:bg           = 'NormalBlack'
+  let s:fg           = 'BrightWhite'
 
 else
 
-  let s:fg           = 'Black'
+  let s:fg           = 'NormalBlack'
 
   if s:gt_eight
-    let s:bg           = 'White'
-    let s:dim          = 'LightGray'
-    let s:dimtwo       = 'DarkGray'
+    let s:bg           = 'BrightWhite'
+    let s:dim          = 'NormalWhite'
+    let s:dimtwo       = 'BrightBlack'
   else
     let s:bg           = 'NONE'
-    let s:dim          = 'LightGray'
-    let s:dimtwo       = 'LightGray'
+    let s:dim          = 'NormalWhite'
+    let s:dimtwo       = 'NormalWhite'
   endif
 
 endif
@@ -108,41 +108,41 @@ endif
 
 if &background == "dark" && s:gt_eight && (!exists('g:fromtermcolors_fg_dark') || g:fromtermcolors_fg_dark != 1)
 
-  let s:red          = 'Red'
-  let s:green        = 'Green'
-  let s:yellow       = 'Yellow'
-  let s:blue         = 'Blue'
-  let s:magenta      = 'Magenta'
-  let s:cyan         = 'Cyan'
+  let s:red          = 'BrightRed'
+  let s:green        = 'BrightGreen'
+  let s:yellow       = 'BrightYellow'
+  let s:blue         = 'BrightBlue'
+  let s:magenta      = 'BrightMagenta'
+  let s:cyan         = 'BrightCyan'
 
-  let s:dimred       = 'DarkRed'
-  let s:dimgreen     = 'DarkGreen'
-  let s:dimyellow    = 'DarkYellow'
-  let s:dimblue      = 'DarkBlue'
-  let s:dimmagenta   = 'DarkMagenta'
-  let s:dimcyan      = 'DarkCyan'
+  let s:dimred       = 'NormalRed'
+  let s:dimgreen     = 'NormalGreen'
+  let s:dimyellow    = 'NormalYellow'
+  let s:dimblue      = 'NormalBlue'
+  let s:dimmagenta   = 'NormalMagenta'
+  let s:dimcyan      = 'NormalCyan'
 
-  let s:brightyellow = 'Yellow'
+  let s:brightyellow = 'BrightYellow'
 
 else
 
-  let s:red          = 'DarkRed'
-  let s:green        = 'DarkGreen'
-  let s:yellow       = 'DarkYellow'
-  let s:blue         = 'DarkBlue'
-  let s:magenta      = 'DarkMagenta'
-  let s:cyan         = 'DarkCyan'
+  let s:red          = 'NormalRed'
+  let s:green        = 'NormalGreen'
+  let s:yellow       = 'NormalYellow'
+  let s:blue         = 'NormalBlue'
+  let s:magenta      = 'NormalMagenta'
+  let s:cyan         = 'NormalCyan'
 
   if s:gt_eight
 
-    let s:dimred       = 'Red'
-    let s:dimgreen     = 'Green'
-    let s:dimyellow    = 'Yellow'
-    let s:dimblue      = 'Blue'
-    let s:dimmagenta   = 'Magenta'
-    let s:dimcyan      = 'Cyan'
+    let s:dimred       = 'BrightRed'
+    let s:dimgreen     = 'BrightGreen'
+    let s:dimyellow    = 'BrightYellow'
+    let s:dimblue      = 'BrightBlue'
+    let s:dimmagenta   = 'BrightMagenta'
+    let s:dimcyan      = 'BrightCyan'
 
-    let s:brightyellow = 'Yellow'
+    let s:brightyellow = 'BrightYellow'
 
   else
 
@@ -203,7 +203,7 @@ call <SID>set_colors("DiffDelete"   , s:bg   , s:dimred   , "")
 call <SID>set_colors("DiffChange"   , s:bg   , s:dimcyan  , "")
 call <SID>set_colors("DiffText"     , s:bg   , s:cyan     , "NONE")
 hi link EndOfBuffer NonText
-call <SID>set_colors("ErrorMsg"     , s:fg     , s:red      , "")
+call <SID>set_colors("ErrorMsg"     , s:fg     , s:dimred      , "")
 
 if s:dimtwo != s:dim " Needs to be different from SignColumn
   call <SID>set_colors("VertSplit" , s:dimtwo , s:dimtwo , "NONE")
@@ -221,9 +221,9 @@ else
   call <SID>set_colors("SignColumn" , "NONE"   , s:dimtwo , "")
 endif
 
-call <SID>set_colors("IncSearch"  , s:brightyellow , "NONE" , "reverse")
+call <SID>set_colors("IncSearch"  , s:blue , "NONE" , "")
 call <SID>set_colors("LineNr"     , s:dim          , ""      , "")
-call <SID>set_colors("MatchParen" , s:yellow       , "NONE"  , "")
+call <SID>set_colors("MatchParen" , s:dimblue       , "NONE"  , "")
 call <SID>set_colors("ModeMsg"    , s:green        , ""      , "")
 call <SID>set_colors("MoreMsg"    , s:green        , ""      , "")
 call <SID>set_colors("NonText"    , s:dim          , ""      , "")
@@ -245,7 +245,7 @@ endif
 call <SID>set_colors("PMenuSbar"        , s:fg       , s:dim          , "")
 call <SID>set_colors("PMenuThumb"       , s:fg       , s:dim          , "")
 call <SID>set_colors("Question"         , s:green    , ""             , "")
-call <SID>set_colors("Search"           , s:brightyellow, "NONE", "reverse")
+call <SID>set_colors("Search"           , s:dimblue, "NONE", "reverse")
 call <SID>set_colors("SpecialKey"       , s:dim      , ""             , "")
 call <SID>set_colors("SpellBad"         , s:dimred   , s:fg           , "reverse")
 call <SID>set_colors("SpellCap"         , ""         , s:red          , "reverse")
