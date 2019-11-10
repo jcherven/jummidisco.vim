@@ -221,9 +221,9 @@ else
   call <SID>set_colors("SignColumn" , "NONE"   , s:dimtwo , "")
 endif
 
-call <SID>set_colors("IncSearch"  , s:blue , "NONE" , "")
+call <SID>set_colors("IncSearch"  , s:dimblue , s:dimtwo , "")
 call <SID>set_colors("LineNr"     , s:dim          , ""      , "")
-call <SID>set_colors("MatchParen" , s:dimblue       , "NONE"  , "")
+call <SID>set_colors("MatchParen" , s:dim       , s:dimtwo  , "")
 call <SID>set_colors("ModeMsg"    , s:green        , ""      , "")
 call <SID>set_colors("MoreMsg"    , s:green        , ""      , "")
 call <SID>set_colors("NonText"    , s:dim          , ""      , "")
@@ -245,7 +245,7 @@ endif
 call <SID>set_colors("PMenuSbar"        , s:fg       , s:dim          , "")
 call <SID>set_colors("PMenuThumb"       , s:fg       , s:dim          , "")
 call <SID>set_colors("Question"         , s:green    , ""             , "")
-call <SID>set_colors("Search"           , s:dimblue, "NONE", "reverse")
+call <SID>set_colors("Search"           , s:dimblue  , s:dimtwo         , "reverse")
 call <SID>set_colors("SpecialKey"       , s:dim      , ""             , "")
 call <SID>set_colors("SpellBad"         , s:dimred   , s:fg           , "reverse")
 call <SID>set_colors("SpellCap"         , ""         , s:red          , "reverse")
@@ -261,7 +261,7 @@ call <SID>set_colors("TabLineSel"       , ""         , ""             , "NONE")
 call <SID>set_colors("Title"            , "NONE"     , ""             , "")
 call <SID>set_colors("Visual"           , ""         , s:dim          , "")
 call <SID>set_colors("VisualNOS"        , s:dim      , ""             , "")
-call <SID>set_colors("WarningMsg"       , s:red      , s:dim             , "")
+call <SID>set_colors("WarningMsg"       , s:red      , s:dim          , "")
 call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 
 " End Highlight Groups }}}
@@ -271,9 +271,9 @@ call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 " Group Names (:h group-name) {{{
 
 if (s:italic)
-  call <SID>set_colors("Comment", s:dimtwo, "", "italic")
+  call <SID>set_colors("Comment", s:dim, "", "italic")
 else
-  call <SID>set_colors("Comment", s:dimtwo, "", "")
+  call <SID>set_colors("Comment", s:dim, "", "")
 endif
 
 call <SID>set_colors("Constant", s:green, "", "")
