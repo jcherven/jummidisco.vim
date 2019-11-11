@@ -51,7 +51,6 @@ fun! <SID>set_colors(group, fg, bg, attr)
   endif
 
 endfun
-" }}}
 
 
 
@@ -76,24 +75,25 @@ if (&t_ZH != '' && &t_ZH != '[7m')
 else
   let s:italic = 0
 endif
+" }}}
 
 
 
-" Define our colors based on the background setting {{{
+" Define our colors based on the background setting
 if &background == "dark" && s:gt_eight
 
   let s:dim          = 'BrightBlack'
   let s:dimtwo       = 'NormalWhite'
 
   let s:bg           = 'NormalBlack'
-  let s:fg           = 'BrightWhite'
+  let s:fg           = 'NormalWhite'
 
 else
 
   let s:fg           = 'NormalBlack'
 
   if s:gt_eight
-    let s:bg           = 'BrightWhite'
+    let s:bg           = 'NormalWhite'
     let s:dim          = 'NormalWhite'
     let s:dimtwo       = 'BrightBlack'
   else
@@ -122,7 +122,7 @@ if &background == "dark" && s:gt_eight && (!exists('g:fromtermcolors_fg_dark') |
   let s:dimmagenta   = 'NormalMagenta'
   let s:dimcyan      = 'NormalCyan'
 
-  let s:brightyellow = 'BrightYellow'
+  let s:brightyellow = 'BrightWhite'
 
 else
 
@@ -166,17 +166,17 @@ else
   let s:alt_red     = s:red
   let s:dim_alt_red = s:dimred
 endif
-" }}}
 
-if exists('g:fromtermcolors_color_map')
+
+if exists('g:fromtermcolors_color_map') " {{{
   for [s:key, s:val] in items(g:fromtermcolors_color_map)
     execute 'let s:' . s:key . ' = ' . s:val
   endfor
 endif
+" }}}
 
 
-
-" Highlight Groups (:h highlight-groups) {{{
+" Highlight Groups (:h highlight-groups)
 " call <SID>set_colors(group, fg, bg, attr)
 if s:dimtwo != s:dim " Needs to be different from Comment
   call <SID>set_colors("ColorColumn"  , "NONE" , s:dim , "")
@@ -196,7 +196,7 @@ call <SID>set_colors("Conceal"  , ""     , "NONE" , "")
 call <SID>set_colors("Cursor"   , "NONE" , "NONE" , "reverse")
 call <SID>set_colors("CursorIM" , ""     , ""     , "")
 
-call <SID>set_colors("CursorLineNr" , "NONE" , s:dim      , "")
+call <SID>set_colors("CursorLineNr" , s:brightyellow , s:dimblue      , "")
 call <SID>set_colors("Directory"    , s:blue , ""         , "")
 call <SID>set_colors("DiffAdd"      , s:bg   , s:dimgreen , "")
 call <SID>set_colors("DiffDelete"   , s:bg   , s:dimred   , "")
@@ -206,7 +206,7 @@ hi link EndOfBuffer NonText
 call <SID>set_colors("ErrorMsg"     , s:fg     , s:dimred      , "")
 
 if s:dimtwo != s:dim " Needs to be different from SignColumn
-  call <SID>set_colors("VertSplit" , s:dimtwo , s:dimtwo , "NONE")
+  call <SID>set_colors("VertSplit" , s:dimblue , "" , "NONE")
 else
   call <SID>set_colors("VertSplit" , s:fg     , s:fg , "reverse")
 endif
@@ -251,20 +251,20 @@ call <SID>set_colors("SpellBad"         , s:dimred   , s:fg           , "reverse
 call <SID>set_colors("SpellCap"         , ""         , s:red          , "reverse")
 call <SID>set_colors("SpellLocal"       , ""         , s:red          , "reverse")
 call <SID>set_colors("SpellRare"        , s:dimred   , s:fg           , "reverse")
-call <SID>set_colors("StatusLine"       , ""         , ""             , "reverse")
-call <SID>set_colors("StatusLineNC"     , s:dim      , ""             , "")
+call <SID>set_colors("StatusLine"       , s:dimyellow         , ""             , "reverse")
+call <SID>set_colors("StatusLineNC"     , s:dimblue      , s:dim             , "")
 call <SID>set_colors("StatusLineTerm"   , s:green    , "NONE"         , "reverse")
 call <SID>set_colors("StatusLineTermNC" , s:dimgreen , "NONE"         , "reverse")
-call <SID>set_colors("TabLine"          , s:fg       , s:dim          , "NONE")
-call <SID>set_colors("TabLineFill"      , s:dim      , s:dimtwo       , "")
-call <SID>set_colors("TabLineSel"       , ""         , ""             , "NONE")
+call <SID>set_colors("TabLine"          , s:dim       , s:dimblue          , "NONE")
+call <SID>set_colors("TabLineFill"      , s:dimblue      , s:dimtwo       , "")
+call <SID>set_colors("TabLineSel"       , s:fg         , s:bg             , "NONE")
 call <SID>set_colors("Title"            , "NONE"     , ""             , "")
-call <SID>set_colors("Visual"           , ""         , s:dim          , "")
+call <SID>set_colors("Visual"           , ""         , s:dimblue          , "")
 call <SID>set_colors("VisualNOS"        , s:dim      , ""             , "")
 call <SID>set_colors("WarningMsg"       , s:red      , s:dim          , "")
 call <SID>set_colors("WildMenu"         , s:green    , s:dim          , "")
 
-" End Highlight Groups }}}
+" End Highlight Groups
 
 
 
@@ -321,7 +321,7 @@ call <SID>set_colors("Ignore"     , s:dim  , ""       , "")
 call <SID>set_colors("Error"      , s:red  , "white"  , "reverse")
 call <SID>set_colors("Todo"       , s:bg   , s:yellow , "")
 
-" End Group Names }}}
+" End Group Names
 
 
 
