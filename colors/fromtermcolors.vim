@@ -83,23 +83,23 @@ endif
 if &background == "dark" && s:gt_eight
 
   let s:brightbg          = 'BrightBlack'
-  let s:brightfg       = 'NormalWhite'
+  let s:brightfg	  = 'NormalWhite'
 
-  let s:normalbg           = 'NormalBlack'
-  let s:normalfg           = 'NormalWhite'
+  let s:normalbg          = 'NormalBlack'
+  let s:normalfg          = 'NormalWhite'
 
 else
 
-  let s:normalfg           = 'NormalBlack'
+  let s:normalfg          = 'NormalBlack'
 
   if s:gt_eight
-    let s:normalbg           = 'NormalWhite'
-    let s:brightbg          = 'NormalWhite'
-    let s:brightfg       = 'BrightBlack'
+    let s:normalbg        = 'NormalWhite'
+    let s:brightbg        = 'NormalWhite'
+    let s:brightfg	  = 'BrightBlack'
   else
-    let s:normalbg           = 'NONE'
-    let s:brightbg          = 'NormalWhite'
-    let s:brightfg       = 'NormalWhite'
+    let s:normalbg        = 'NONE'
+    let s:brightbg        = 'NormalWhite'
+    let s:brightfg	  = 'NormalWhite'
   endif
 
 endif
@@ -108,30 +108,30 @@ endif
 
 if &background == "dark" && s:gt_eight && (!exists('g:fromtermcolors_fg_dark') || g:fromtermcolors_fg_dark != 1)
 
-  let s:brightred          = 'BrightRed'
-  let s:brightgreen        = 'BrightGreen'
-  let s:brightyellow       = 'BrightYellow'
-  let s:brightblue         = 'BrightBlue'
-  let s:brightmagenta      = 'BrightMagenta'
-  let s:brightcyan         = 'BrightCyan'
+  let s:brightred         = 'BrightRed'
+  let s:brightgreen       = 'BrightGreen'
+  let s:brightyellow      = 'BrightYellow'
+  let s:brightblue        = 'BrightBlue'
+  let s:brightmagenta     = 'BrightMagenta'
+  let s:brightcyan        = 'BrightCyan'
 
-  let s:normalred       = 'NormalRed'
-  let s:normalgreen     = 'NormalGreen'
-  let s:normalyellow    = 'NormalYellow'
-  let s:normalblue      = 'NormalBlue'
-  let s:normalmagenta   = 'NormalMagenta'
-  let s:normalcyan      = 'NormalCyan'
+  let s:normalred	  = 'NormalRed'
+  let s:normalgreen	  = 'NormalGreen'
+  let s:normalyellow	  = 'NormalYellow'
+  let s:normalblue	  = 'NormalBlue'
+  let s:normalmagenta	  = 'NormalMagenta'
+  let s:normalcyan	  = 'NormalCyan'
 
-  let s:cursoryellow = 'BrightWhite'
+  let s:cursoryellow	  = 'BrightWhite'
 
 else
 
-  let s:brightred          = 'NormalRed'
-  let s:brightgreen        = 'NormalGreen'
-  let s:brightyellow       = 'NormalYellow'
-  let s:brightblue         = 'NormalBlue'
-  let s:brightmagenta      = 'NormalMagenta'
-  let s:brightcyan         = 'NormalCyan'
+  let s:brightred         = 'NormalRed'
+  let s:brightgreen       = 'NormalGreen'
+  let s:brightyellow      = 'NormalYellow'
+  let s:brightblue        = 'NormalBlue'
+  let s:brightmagenta     = 'NormalMagenta'
+  let s:brightcyan        = 'NormalCyan'
 
   if s:gt_eight
 
@@ -142,7 +142,7 @@ else
     let s:normalmagenta   = 'BrightMagenta'
     let s:normalcyan      = 'BrightCyan'
 
-    let s:cursoryellow = 'BrightYellow'
+    let s:cursoryellow	  = 'BrightYellow'
 
   else
 
@@ -153,18 +153,18 @@ else
     let s:normalmagenta   = s:brightmagenta
     let s:normalcyan      = s:brightcyan
 
-    let s:cursoryellow = s:brightyellow
+    let s:cursoryellow	  = s:brightyellow
 
   endif
 endif
 
 " Use something other than red if user has asked to use red only for errors
 if exists('g:fromtermcolors_red_error_only') && g:fromtermcolors_red_error_only == 1
-  let s:alt_red     = s:normalcyan
-  let s:dim_alt_red = s:normalcyan
+  let s:alt_red		  = s:normalcyan
+  let s:dim_alt_red	  = s:normalcyan
 else
-  let s:alt_red     = s:brightred
-  let s:dim_alt_red = s:normalred
+  let s:alt_red		  = s:brightred
+  let s:dim_alt_red	  = s:normalred
 endif
 
 
