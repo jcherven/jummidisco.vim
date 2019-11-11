@@ -258,7 +258,7 @@ call <SID>set_colors("StatusLineTermNC" , s:normalgreen , "NONE"         , "reve
 call <SID>set_colors("TabLine"          , s:brightbg       , s:normalblue          , "NONE")
 call <SID>set_colors("TabLineFill"      , s:normalblue      , s:brightfg       , "")
 call <SID>set_colors("TabLineSel"       , s:normalfg         , s:normalbg             , "NONE")
-call <SID>set_colors("Title"            , "NONE"     , ""             , "")
+call <SID>set_colors("Title"            , s:brightyellow     , ""             , "")
 call <SID>set_colors("Visual"           , ""         , s:normalblue          , "")
 call <SID>set_colors("VisualNOS"        , s:brightbg      , ""             , "")
 call <SID>set_colors("WarningMsg"       , s:brightred      , s:brightbg          , "")
