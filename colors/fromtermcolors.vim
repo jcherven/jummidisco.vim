@@ -85,19 +85,19 @@ if &background == "dark" && s:gt_eight
   let s:brightbg          = 'BrightBlack'
   let s:brightfg       = 'NormalWhite'
 
-  let s:bg           = 'NormalBlack'
-  let s:fg           = 'NormalWhite'
+  let s:normalbg           = 'NormalBlack'
+  let s:normalfg           = 'NormalWhite'
 
 else
 
-  let s:fg           = 'NormalBlack'
+  let s:normalfg           = 'NormalBlack'
 
   if s:gt_eight
-    let s:bg           = 'NormalWhite'
+    let s:normalbg           = 'NormalWhite'
     let s:brightbg          = 'NormalWhite'
     let s:brightfg       = 'BrightBlack'
   else
-    let s:bg           = 'NONE'
+    let s:normalbg           = 'NONE'
     let s:brightbg          = 'NormalWhite'
     let s:brightfg       = 'NormalWhite'
   endif
@@ -198,17 +198,17 @@ call <SID>set_colors("CursorIM" , ""     , ""     , "")
 
 call <SID>set_colors("CursorLineNr" , s:cursoryellow , s:normalblue      , "")
 call <SID>set_colors("Directory"    , s:brightblue , ""         , "")
-call <SID>set_colors("DiffAdd"      , s:bg   , s:normalgreen , "")
-call <SID>set_colors("DiffDelete"   , s:bg   , s:normalred   , "")
-call <SID>set_colors("DiffChange"   , s:bg   , s:normalcyan  , "")
-call <SID>set_colors("DiffText"     , s:bg   , s:brightcyan     , "NONE")
+call <SID>set_colors("DiffAdd"      , s:normalbg   , s:normalgreen , "")
+call <SID>set_colors("DiffDelete"   , s:normalbg   , s:normalred   , "")
+call <SID>set_colors("DiffChange"   , s:normalbg   , s:normalcyan  , "")
+call <SID>set_colors("DiffText"     , s:normalbg   , s:brightcyan     , "NONE")
 hi link EndOfBuffer NonText
-call <SID>set_colors("ErrorMsg"     , s:fg     , s:normalred      , "")
+call <SID>set_colors("ErrorMsg"     , s:normalfg     , s:normalred      , "")
 
 if s:brightfg != s:brightbg " Needs to be different from SignColumn
   call <SID>set_colors("VertSplit" , s:normalblue , "" , "NONE")
 else
-  call <SID>set_colors("VertSplit" , s:fg     , s:fg , "reverse")
+  call <SID>set_colors("VertSplit" , s:normalfg     , s:normalfg , "reverse")
 endif
 
 if s:brightfg != s:brightbg
@@ -234,30 +234,30 @@ else
   call <SID>set_colors("Normal" , ""      , ""      , "")
 endif
 
-call <SID>set_colors("PMenu"        , s:fg           , s:brightbg          , "")
+call <SID>set_colors("PMenu"        , s:normalfg           , s:brightbg          , "")
 
 if s:brightfg != s:brightbg
   call <SID>set_colors("PMenuSel" , s:cursoryellow , s:normalblue , "")
 else
-  call <SID>set_colors("PMenuSel" , s:cursoryellow , s:fg     , "")
+  call <SID>set_colors("PMenuSel" , s:cursoryellow , s:normalfg     , "")
 endif
 
-call <SID>set_colors("PMenuSbar"        , s:fg       , s:brightbg          , "")
-call <SID>set_colors("PMenuThumb"       , s:fg       , s:brightbg          , "")
+call <SID>set_colors("PMenuSbar"        , s:normalfg       , s:brightbg          , "")
+call <SID>set_colors("PMenuThumb"       , s:normalfg       , s:brightbg          , "")
 call <SID>set_colors("Question"         , s:brightgreen    , ""             , "")
 call <SID>set_colors("Search"           , s:normalblue  , s:brightfg         , "reverse")
 call <SID>set_colors("SpecialKey"       , s:brightbg      , ""             , "")
-call <SID>set_colors("SpellBad"         , s:normalred   , s:fg           , "reverse")
+call <SID>set_colors("SpellBad"         , s:normalred   , s:normalfg           , "reverse")
 call <SID>set_colors("SpellCap"         , ""         , s:brightred          , "reverse")
 call <SID>set_colors("SpellLocal"       , ""         , s:brightred          , "reverse")
-call <SID>set_colors("SpellRare"        , s:normalred   , s:fg           , "reverse")
+call <SID>set_colors("SpellRare"        , s:normalred   , s:normalfg           , "reverse")
 call <SID>set_colors("StatusLine"       , s:normalyellow         , ""             , "reverse")
 call <SID>set_colors("StatusLineNC"     , s:normalblue      , s:brightbg             , "")
 call <SID>set_colors("StatusLineTerm"   , s:brightgreen    , "NONE"         , "reverse")
 call <SID>set_colors("StatusLineTermNC" , s:normalgreen , "NONE"         , "reverse")
 call <SID>set_colors("TabLine"          , s:brightbg       , s:normalblue          , "NONE")
 call <SID>set_colors("TabLineFill"      , s:normalblue      , s:brightfg       , "")
-call <SID>set_colors("TabLineSel"       , s:fg         , s:bg             , "NONE")
+call <SID>set_colors("TabLineSel"       , s:normalfg         , s:normalbg             , "NONE")
 call <SID>set_colors("Title"            , "NONE"     , ""             , "")
 call <SID>set_colors("Visual"           , ""         , s:normalblue          , "")
 call <SID>set_colors("VisualNOS"        , s:brightbg      , ""             , "")
@@ -319,7 +319,7 @@ hi link Debug          Special
 call <SID>set_colors("Underlined" , "NONE" , ""       , "underline")
 call <SID>set_colors("Ignore"     , s:brightbg  , ""       , "")
 call <SID>set_colors("Error"      , s:brightred  , "white"  , "reverse")
-call <SID>set_colors("Todo"       , s:bg   , s:brightyellow , "")
+call <SID>set_colors("Todo"       , s:normalbg   , s:brightyellow , "")
 
 " End Group Names
 
@@ -344,7 +344,7 @@ call <SID>set_colors("Todo"       , s:bg   , s:brightyellow , "")
 " call <SID>set_colors("phpRepeat"         , s:brightmagenta , "NONE" , "")
 " call <SID>set_colors("phpConditional"    , s:brightmagenta , "NONE" , "")
 " call <SID>set_colors("phpStatement"      , s:brightmagenta , "NONE" , "")
-" call <SID>set_colors("phpMemberSelector" , s:fg      , "NONE" , "")
+" call <SID>set_colors("phpMemberSelector" , s:normalfg      , "NONE" , "")
 "
 " " Ruby Highlighting
 " call <SID>set_colors("rubySymbol"                 , s:brightgreen   , "NONE" , "")
@@ -396,9 +396,9 @@ call <SID>set_colors("Todo"       , s:bg   , s:brightyellow , "")
 " hi link htmlScriptTag      Statement
 
 " vim-showmarks
-call <SID>set_colors("ShowMarksHLl" , s:bg , s:brightblue , "")
-call <SID>set_colors("ShowMarksHLu" , s:bg , s:brightblue , "")
-call <SID>set_colors("ShowMarksHLo" , s:bg , s:brightblue , "")
+call <SID>set_colors("ShowMarksHLl" , s:normalbg , s:brightblue , "")
+call <SID>set_colors("ShowMarksHLu" , s:normalbg , s:brightblue , "")
+call <SID>set_colors("ShowMarksHLo" , s:normalbg , s:brightblue , "")
 
 " End syntax-specific highlighting }}}
 
@@ -406,6 +406,6 @@ call <SID>set_colors("ShowMarksHLo" , s:bg , s:brightblue , "")
 
 " Clean up
 delf <SID>set_colors
-unlet s:brightbg s:brightfg s:bg s:fg s:brightblue s:brightyellow s:brightred s:brightgreen s:brightcyan s:brightmagenta s:cursoryellow s:normalred s:normalgreen s:normalcyan
+unlet s:brightbg s:brightfg s:normalbg s:normalfg s:brightblue s:brightyellow s:brightred s:brightgreen s:brightcyan s:brightmagenta s:cursoryellow s:normalred s:normalgreen s:normalcyan
 
 " ex: set noexpandtab nolist foldmethod=marker:
