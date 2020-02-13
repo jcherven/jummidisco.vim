@@ -321,7 +321,7 @@ call <SID>set_colors("Ignore"     , s:brightbg  , ""       , "")
 call <SID>set_colors("Error"      , s:brightred  , "white"  , "reverse")
 call <SID>set_colors("Todo"       , s:normalbg   , s:brightyellow , "")
 
-" End Group Names
+" End Group Names }}}
 
 
 
