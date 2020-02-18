@@ -15,4 +15,4 @@ Codebase derived from jsit/vim-tomorrow-theme (which was derived from chriskemps
 
 # License
 
-Copyright (c) Jay Sitter. Distributed under the same terms as Vim itself. See :help license.
+Distributed under the same terms as Vim itself. See :help license.
