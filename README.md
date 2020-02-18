@@ -48,7 +48,7 @@ fun! <SID>set_colors(group, fg, bg, attr)
 
 You may find it very helpful to run vim's builtin highlight test to see how the current highlight groups are assigned. In a  split or separate buffer, run `:source $VIMRUNTIME/syntax/hitest.vim` so that you can reference the current appearance of each highlight group as you edit.
 
-#### Setting Vim UI colors
+#### Setting Vim UI Colors
 
 An example of setting the line number column to blue with your default foreground text color:
 ```
