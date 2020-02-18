@@ -223,7 +223,7 @@ endif
 
 call <SID>set_colors("IncSearch"  , s:normalblue , s:brightfg , "")
 call <SID>set_colors("LineNr"     , s:brightbg          , ""      , "")
-call <SID>set_colors("MatchParen" , s:brightbg       , s:brightfg  , "")
+call <SID>set_colors("MatchParen" , s:normalbg       , s:brightfg  , "")
 call <SID>set_colors("ModeMsg"    , s:brightgreen        , ""      , "")
 call <SID>set_colors("MoreMsg"    , s:brightgreen        , ""      , "")
 call <SID>set_colors("NonText"    , s:brightbg          , ""      , "")
@@ -242,6 +242,7 @@ else
   call <SID>set_colors("PMenuSel" , s:cursoryellow , s:normalfg     , "")
 endif
 
+call <SID>set_colors("CursorLine"	, ""   , ""			, "")
 call <SID>set_colors("PMenuSbar"        , s:normalfg       , s:brightbg          , "")
 call <SID>set_colors("PMenuThumb"       , s:normalfg       , s:brightbg          , "")
 call <SID>set_colors("Question"         , s:brightgreen    , ""             , "")
@@ -316,7 +317,7 @@ hi link Delimiter      Special
 hi link SpecialComment Special
 hi link Debug          Special
 
-call <SID>set_colors("Underlined" , "NONE" , ""       , "underline")
+call <SID>set_colors("Underlined" , s:normalfg , ""       , "underline")
 call <SID>set_colors("Ignore"     , s:brightbg  , ""       , "")
 call <SID>set_colors("Error"      , s:brightred  , "white"  , "reverse")
 call <SID>set_colors("Todo"       , s:normalbg   , s:brightyellow , "")
