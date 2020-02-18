@@ -3,6 +3,8 @@
 " Last Change:
 " URL:
 " Description: A full set of 1-, 8-, 16-, 88-, 256-, and GUI-color-compatible colors.
+" Run :so $VIMRUNTIME/syntax/hitest.vim to see the currently used highlight
+" groups for debugging
 
 " We need to use :h color-nr numbers for cterm, in case we are on a low-color
 " terminal
@@ -242,28 +244,35 @@ else
   call <SID>set_colors("PMenuSel" , s:cursoryellow , s:normalfg     , "")
 endif
 
-call <SID>set_colors("CursorLine"	, ""   , ""			, "")
-call <SID>set_colors("PMenuSbar"        , s:normalfg       , s:brightbg          , "")
-call <SID>set_colors("PMenuThumb"       , s:normalfg       , s:brightbg          , "")
-call <SID>set_colors("Question"         , s:brightgreen    , ""             , "")
-call <SID>set_colors("Search"           , s:normalblue  , s:brightfg         , "reverse")
-call <SID>set_colors("SpecialKey"       , s:brightbg      , ""             , "")
-call <SID>set_colors("SpellBad"         , s:normalred   , s:normalfg           , "reverse")
-call <SID>set_colors("SpellCap"         , ""         , s:brightred          , "reverse")
-call <SID>set_colors("SpellLocal"       , ""         , s:brightred          , "reverse")
-call <SID>set_colors("SpellRare"        , s:normalred   , s:normalfg           , "reverse")
-call <SID>set_colors("StatusLine"       , s:normalyellow         , ""             , "reverse")
-call <SID>set_colors("StatusLineNC"     , s:normalblue      , s:brightbg             , "")
-call <SID>set_colors("StatusLineTerm"   , s:brightgreen    , "NONE"         , "reverse")
-call <SID>set_colors("StatusLineTermNC" , s:normalgreen , "NONE"         , "reverse")
-call <SID>set_colors("TabLine"          , s:brightbg       , s:normalblue          , "NONE")
-call <SID>set_colors("TabLineFill"      , s:normalblue      , s:brightfg       , "")
-call <SID>set_colors("TabLineSel"       , s:normalfg         , s:normalbg             , "NONE")
-call <SID>set_colors("Title"            , s:brightyellow     , ""             , "")
-call <SID>set_colors("Visual"           , ""         , s:normalblue          , "")
-call <SID>set_colors("VisualNOS"        , s:brightbg      , ""             , "")
-call <SID>set_colors("WarningMsg"       , s:brightred      , s:brightbg          , "")
-call <SID>set_colors("WildMenu"         , s:brightgreen    , s:brightbg          , "")
+call <sid>set_colors("Cursor"	        , s:cursoryellow, s:normalbg, "")
+call <sid>set_colors("CursorLine"	, "", "", "")
+call <sid>set_colors("NvimInternalError", s:normalred, "", "")
+call <SID>set_colors("PMenuSbar"        , s:normalfg, s:brightbg, "")
+call <SID>set_colors("PMenuThumb"       , s:normalfg, s:brightbg, "")
+call <SID>set_colors("Question"         , s:brightgreen, "", "")
+call <SID>set_colors("RedrawDebugClear" , s:normalbg, "", "")
+call <SID>set_colors("RedrawDebugComposed", s:normalbg, "", "")
+call <SID>set_colors("RedrawDebugRecompose", s:normalbg, "", "")
+call <SID>set_colors("Search"           , s:normalblue, s:brightfg, "reverse")
+call <SID>set_colors("SpecialKey"       , s:brightbg, "", "")
+call <SID>set_colors("SpellBad"         , s:normalred, s:normalfg, "reverse")
+call <SID>set_colors("SpellCap"         , "", s:normalred, "reverse")
+call <SID>set_colors("SpellLocal"       , "", s:normalred, "reverse")
+call <SID>set_colors("SpellRare"        , s:normalred, s:normalfg, "reverse")
+call <SID>set_colors("StatusLine"       , s:normalyellow, "", "reverse")
+call <SID>set_colors("StatusLineNC"     , s:normalblue, s:brightbg, "")
+call <SID>set_colors("StatusLineTerm"   , s:brightgreen, "NONE", "reverse")
+call <SID>set_colors("StatusLineTermNC" , s:normalgreen , "NONE", "reverse")
+call <SID>set_colors("TabLine"          , s:brightbg, s:normalblue, "NONE")
+call <SID>set_colors("TabLineFill"      , s:normalblue, s:brightfg, "")
+call <SID>set_colors("TabLineSel"       , s:normalfg, s:normalbg, "NONE")
+call <SID>set_colors("Title"            , s:brightyellow, "", "")
+call <sid>set_colors("TermCursor"	, s:cursoryellow, "", "")
+call <sid>set_colors("TermCursorNC"	, s:normalfg, "", "")
+call <SID>set_colors("Visual"           , "", s:normalblue, "")
+call <SID>set_colors("VisualNOS"        , s:brightbg, "", "")
+call <SID>set_colors("WarningMsg"       , s:brightred, s:brightbg, "")
+call <SID>set_colors("WildMenu"         , s:brightgreen, s:brightbg, "")
 
 " End Highlight Groups
 
